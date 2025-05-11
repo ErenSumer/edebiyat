@@ -20,7 +20,8 @@ import {
   Pie,
   Cell,
   LineChart,
-  Line
+  Line,
+  Area
 } from "recharts";
 
 export default function Statistics() {
@@ -75,16 +76,16 @@ export default function Statistics() {
                 cy="50%"
                 labelLine={false}
                 outerRadius={150}
-                fill="#8884d8"
                 dataKey="value"
-                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                nameKey="name"
+                label={({ name, percent }: { name: string; percent: number }) => `${name}: ${(percent * 100).toFixed(0)}%`}
               >
                 {usageData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
               <Tooltip 
-                formatter={(value) => [`${value}%`, "Oran"]}
+                formatter={(value: any) => [`${value}%`, "Oran"]}
                 contentStyle={{ 
                   backgroundColor: "rgba(0, 0, 0, 0.8)", 
                   borderColor: "hsl(var(--chart-1))", 
@@ -113,7 +114,7 @@ export default function Statistics() {
                 tick={{ fill: "white" }}
               />
               <Tooltip 
-                formatter={(value) => [`${value}%`, "Oran"]}
+                formatter={(value: any) => [`${value}%`, "Oran"]}
                 contentStyle={{ 
                   backgroundColor: "rgba(0, 0, 0, 0.8)", 
                   borderColor: "hsl(var(--chart-1))", 
@@ -145,7 +146,7 @@ export default function Statistics() {
                 tick={{ fill: "white" }}
               />
               <Tooltip 
-                formatter={(value) => [`${value}%`, "Doğru Türkçe Kullanımı"]}
+                formatter={(value: any) => [`${value}%`, "Doğru Türkçe Kullanımı"]}
                 contentStyle={{ 
                   backgroundColor: "rgba(0, 0, 0, 0.8)", 
                   borderColor: "hsl(var(--chart-3))", 

@@ -163,9 +163,7 @@ export default function Solutions() {
         >
           <a 
             href="#" 
-            className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-md text-white font-medium text-lg shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
+            className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-md text-white font-medium text-lg shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all hover:scale-105 active:scale-98"
           >
             Harekete Geç
           </a>
